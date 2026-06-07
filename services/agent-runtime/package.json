@@ -1,0 +1,21 @@
+{
+  "name": "@ajaxai/agent-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node dist/index.js",
+    "start": "node dist/index.js",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@ajaxai/shared": "*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

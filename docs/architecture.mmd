@@ -1,0 +1,53 @@
+flowchart LR
+  subgraph Client
+    BROWSER[User Browser]
+    WEB[AjaxAI Web App<br/>Next.js Frontend]
+  end
+
+  subgraph Node_Services
+    API[Express API Gateway<br/>`services/backend`]
+    WS[SignalR / WebSocket Hub]
+    AGENT_TS[Agent Runtime (TS)<br/>`services/agent-runtime`]
+    SHARED[`@ajaxai/shared`]
+  end
+
+  subgraph Python_Agents
+    API_PY[FastAPI API (optional)<br/>`backend/app/api/v1`]
+    CELERY[Celery Workers<br/>`backend/app/workers/celery.py`]
+    AGENTS[Agent Modules<br/>`backend/app/agent_runtime/*`]
+    BROWSER_AGENT[Playwright Browser Agent]
+  end
+
+  subgraph Data_and_Infra
+    COSMOS[Azure Cosmos DB]
+    OPENAI[Azure OpenAI / Embeddings]
+    SB[Azure Service Bus]
+    KV[Key Vault]
+    REDIS[Redis (Celery broker)]
+    DBJSON[Local db.json fallback]
+  end
+
+  BROWSER --> WEB
+  WEB -- REST --> API
+  WEB -- WebSocket --> WS
+  API -- upgrades --> WS
+  API -- uses --> SHARED
+  AGENT_TS -- reads/writes --> SHARED
+  AGENT_TS -- triggers --> API
+  API_PY -- enqueue --> CELERY
+  CELERY -- runs --> AGENTS
+  AGENTS -- may use --> BROWSER_AGENT
+  AGENTS -- call --> OPENAI
+  SHARED -- persistence --> COSMOS
+  SHARED -- fallback --> DBJSON
+  CELERY -- broker --> REDIS
+  Data_and_Infra -->|secrets| KV
+  Data_and_Infra -->|messaging| SB
+
+  classDef client fill:#eef7ff,stroke:#5b8def,color:#102a43;
+  classDef service fill:#f8f9fa,stroke:#b7c0cd,color:#102a43;
+  classDef infra fill:#fff7e6,stroke:#d6a23a,color:#4a3410;
+  class Client client;
+  class Node_Services service;
+  class Python_Agents service;
+  class Data_and_Infra infra;

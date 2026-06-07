@@ -1,0 +1,1397 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "name": "Alex Carter",
+      "email": "alex.carter@enterprise.com",
+      "role": "Principal Engineer"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "obj_pm",
+      "userId": "usr_admin",
+      "title": "Become a Product Manager",
+      "description": "Decompose current skills, identify PM gaps, create a portfolio, and secure an AI Product Manager job.",
+      "complexity": "High",
+      "status": "Blocked",
+      "milestones": [
+        "Skill Gap Analysis",
+        "Portfolio Launch",
+        "Job Applications",
+        "Interview Preparation"
+      ],
+      "blockers": [
+        "Lack of formal PM credentials"
+      ],
+      "dependencies": [],
+      "createdAt": "2026-06-04T08:56:31.113Z",
+      "updatedAt": "2026-06-07T08:58:57.762Z",
+      "progressScore": 60,
+      "momentumScore": 15,
+      "stallScore": 80,
+      "riskScore": 70,
+      "completionProbability": 50,
+      "intentStrength": 92,
+      "recoveryPriority": 90
+    },
+    {
+      "id": "obj_startup",
+      "userId": "usr_admin",
+      "title": "Launch a SaaS Startup",
+      "description": "Design the micro-SaaS concept, build a landing page, implement payment gateways, and recruit initial beta testers.",
+      "complexity": "High",
+      "status": "Draft",
+      "milestones": [
+        "Niche Research",
+        "MVP Build",
+        "Payment Setup",
+        "Beta Launch"
+      ],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-06-07T08:56:31.114Z",
+      "updatedAt": "2026-06-07T08:56:31.114Z",
+      "progressScore": 10,
+      "momentumScore": 30,
+      "stallScore": 70,
+      "riskScore": 60,
+      "completionProbability": 25,
+      "intentStrength": 80,
+      "recoveryPriority": 85
+    },
+    {
+      "id": "obj_azure",
+      "userId": "usr_admin",
+      "title": "Learn Azure AI Solutions",
+      "description": "Complete Microsoft Azure AI training modules, build 3 demo apps, and obtain the AI-102 certification.",
+      "complexity": "Medium",
+      "status": "Completed",
+      "milestones": [
+        "Azure AI Fundamentals",
+        "Demo App Portfolio",
+        "AI-102 Exam"
+      ],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-05-08T08:56:31.115Z",
+      "updatedAt": "2026-06-05T08:56:31.115Z",
+      "progressScore": 100,
+      "momentumScore": 0,
+      "stallScore": 0,
+      "riskScore": 0,
+      "completionProbability": 100,
+      "intentStrength": 95,
+      "recoveryPriority": 0
+    },
+    {
+      "id": "obj_res_1780823021000",
+      "userId": "usr_admin",
+      "title": "Job Application: Azure AI PM",
+      "description": "You visited the Azure AI PM job application page 4 times today but have not submitted your profile.\n\n[Resurrected Context]: Careers at Microsoft - Job ID: Azure-10928. Pre-requisites include Cosmos DB and LLM orchestrator skills.",
+      "complexity": "Medium",
+      "status": "Blocked",
+      "milestones": [
+        "Analyze Resurrected Context",
+        "Scaffold Action Plan",
+        "Execute Task Sequence"
+      ],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:03:41.000Z",
+      "updatedAt": "2026-06-07T09:03:51.459Z",
+      "progressScore": 50,
+      "momentumScore": 15,
+      "stallScore": 80,
+      "riskScore": 70,
+      "completionProbability": 40,
+      "intentStrength": 95,
+      "recoveryPriority": 90
+    },
+    {
+      "id": "obj_1780805745153",
+      "userId": "usr_admin",
+      "title": "Help me become a Product Manager",
+      "description": "User goal: Help me become a Product Manager",
+      "complexity": "Medium",
+      "status": "Active",
+      "milestones": [],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:45:45.153891Z",
+      "updatedAt": "2026-06-07T09:45:45.182775Z",
+      "progressScore": 0,
+      "momentumScore": 0,
+      "stallScore": 0,
+      "riskScore": 0,
+      "completionProbability": 0,
+      "intentStrength": 50,
+      "recoveryPriority": 0
+    },
+    {
+      "id": "obj_1780805854611",
+      "userId": "usr_admin",
+      "title": "Help me become a Ajax Manager",
+      "description": "User goal: Help me become a Ajax Manager",
+      "complexity": "Medium",
+      "status": "Active",
+      "milestones": [],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:47:34.611903Z",
+      "updatedAt": "2026-06-07T09:47:34.691817Z",
+      "progressScore": 0,
+      "momentumScore": 0,
+      "stallScore": 0,
+      "riskScore": 0,
+      "completionProbability": 0,
+      "intentStrength": 50,
+      "recoveryPriority": 0
+    },
+    {
+      "id": "obj_1780805854637",
+      "userId": "usr_admin",
+      "title": "Help me become a Product Manager",
+      "description": "User goal: Help me become a Product Manager",
+      "complexity": "Medium",
+      "status": "Active",
+      "milestones": [],
+      "blockers": [],
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:47:34.637068Z",
+      "updatedAt": "2026-06-07T09:49:23.880730Z",
+      "progressScore": 0,
+      "momentumScore": 0,
+      "stallScore": 0,
+      "riskScore": 0,
+      "completionProbability": 0,
+      "intentStrength": 50,
+      "recoveryPriority": 0
+    }
+  ],
+  "tasks": [
+    {
+      "id": "tsk_1",
+      "objectiveId": "obj_pm",
+      "title": "Analyze Resume & Identify Skill Gaps",
+      "description": "Chief Orchestrator assigns Research Agent to scan standard PM requirements and evaluate current CV.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 1,
+      "dependencies": [],
+      "milestoneId": "Skill Gap Analysis",
+      "createdAt": "2026-06-04T08:56:31.115Z",
+      "updatedAt": "2026-06-04T13:44:31.115Z"
+    },
+    {
+      "id": "tsk_2",
+      "objectiveId": "obj_pm",
+      "title": "Create PM Learning Roadmap",
+      "description": "Planner Agent generates a targeted curriculum of courses, books, and frameworks based on gaps.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 2,
+      "dependencies": [
+        "tsk_1"
+      ],
+      "milestoneId": "Skill Gap Analysis",
+      "createdAt": "2026-06-04T13:44:31.116Z",
+      "updatedAt": "2026-06-04T20:56:31.116Z"
+    },
+    {
+      "id": "tsk_3",
+      "objectiveId": "obj_pm",
+      "title": "Build PM Portfolio Site",
+      "description": "Develop a modern, static portfolio showcasing product specs, PRDs, and wireframes.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 3,
+      "dependencies": [
+        "tsk_2"
+      ],
+      "milestoneId": "Portfolio Launch",
+      "createdAt": "2026-06-05T08:56:31.116Z",
+      "updatedAt": "2026-06-07T08:58:51.743Z"
+    },
+    {
+      "id": "tsk_4",
+      "objectiveId": "obj_pm",
+      "title": "Apply to Selected PM Job Listings",
+      "description": "Browser Agent automatically fills job application portals using compiled resume data.",
+      "status": "Blocked",
+      "priority": "Medium",
+      "order": 4,
+      "dependencies": [
+        "tsk_3"
+      ],
+      "milestoneId": "Job Applications",
+      "createdAt": "2026-06-06T08:56:31.117Z",
+      "updatedAt": "2026-06-07T08:58:57.763Z"
+    },
+    {
+      "id": "tsk_5",
+      "objectiveId": "obj_pm",
+      "title": "Prepare PM Case Studies",
+      "description": "Run simulations using Validator and reflection agents to practice metrics and product design scenarios.",
+      "status": "Blocked",
+      "priority": "High",
+      "order": 5,
+      "dependencies": [
+        "tsk_4"
+      ],
+      "milestoneId": "Interview Preparation",
+      "createdAt": "2026-06-07T08:56:31.118Z",
+      "updatedAt": "2026-06-07T08:56:31.118Z"
+    },
+    {
+      "id": "tsk_res_1780823021001_1",
+      "objectiveId": "obj_res_1780823021000",
+      "title": "Analyze context: Unfinished Job Application: Azure AI PM",
+      "description": "Evaluate original details: \"Careers at Microsoft - Job ID: Azure-10928. Pre-requisites include Cosmos DB and LLM orchestrator skills.\"",
+      "status": "Completed",
+      "priority": "High",
+      "order": 1,
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:03:41.001Z",
+      "updatedAt": "2026-06-07T09:03:45.434Z"
+    },
+    {
+      "id": "tsk_res_1780823021002_2",
+      "objectiveId": "obj_res_1780823021000",
+      "title": "Execute: Authorize the Browser Agent to sync your portfolio and submit the application package.",
+      "description": "Follow through on the resurrected next action step.",
+      "status": "Blocked",
+      "priority": "High",
+      "order": 2,
+      "dependencies": [
+        "tsk_res_1780823021001_1"
+      ],
+      "createdAt": "2026-06-07T09:03:41.002Z",
+      "updatedAt": "2026-06-07T09:03:51.460Z"
+    },
+    {
+      "id": "tsk_plan_1780805854255_0",
+      "objectiveId": "obj_1780805745153",
+      "title": "Skill Audit & Gap Review: Help me become a Product Manager",
+      "description": "Identify requirements and cross-reference skill sets.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 1,
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:47:34.255215Z",
+      "updatedAt": "2026-06-07T09:47:34.564361Z"
+    },
+    {
+      "id": "tsk_plan_1780805854278_1",
+      "objectiveId": "obj_1780805745153",
+      "title": "Configure Setup & Execution for Help me become a Product Manager",
+      "description": "Setup target environment and tools configs.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 2,
+      "dependencies": [
+        "tsk_plan_1780805854255_0"
+      ],
+      "createdAt": "2026-06-07T09:47:34.278034Z",
+      "updatedAt": "2026-06-07T09:47:34.278042Z"
+    },
+    {
+      "id": "tsk_plan_1780805854303_2",
+      "objectiveId": "obj_1780805745153",
+      "title": "Finalize and Apply Help me become a Product Manager",
+      "description": "Execute form applications or project deployment scripts.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 3,
+      "dependencies": [
+        "tsk_plan_1780805854278_1"
+      ],
+      "createdAt": "2026-06-07T09:47:34.303026Z",
+      "updatedAt": "2026-06-07T09:47:34.303034Z"
+    },
+    {
+      "id": "tsk_plan_1780805963105_0",
+      "objectiveId": "obj_1780805854611",
+      "title": "Skill Audit & Gap Review: Help me become a Ajax Manager",
+      "description": "Identify requirements and cross-reference skill sets.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 1,
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:49:23.105899Z",
+      "updatedAt": "2026-06-07T09:49:23.811909Z"
+    },
+    {
+      "id": "tsk_plan_1780805963127_1",
+      "objectiveId": "obj_1780805854611",
+      "title": "Configure Setup & Execution for Help me become a Ajax Manager",
+      "description": "Setup target environment and tools configs.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 2,
+      "dependencies": [
+        "tsk_plan_1780805963105_0"
+      ],
+      "createdAt": "2026-06-07T09:49:23.127918Z",
+      "updatedAt": "2026-06-07T09:49:23.127925Z"
+    },
+    {
+      "id": "tsk_plan_1780805963149_2",
+      "objectiveId": "obj_1780805854611",
+      "title": "Finalize and Apply Help me become a Ajax Manager",
+      "description": "Execute form applications or project deployment scripts.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 3,
+      "dependencies": [
+        "tsk_plan_1780805963127_1"
+      ],
+      "createdAt": "2026-06-07T09:49:23.149771Z",
+      "updatedAt": "2026-06-07T09:49:23.149778Z"
+    },
+    {
+      "id": "tsk_plan_1780806072222_0",
+      "objectiveId": "obj_1780805854637",
+      "title": "Skill Audit & Gap Review: Help me become a Product Manager",
+      "description": "Identify requirements and cross-reference skill sets.",
+      "status": "Completed",
+      "priority": "High",
+      "order": 1,
+      "dependencies": [],
+      "createdAt": "2026-06-07T09:51:12.222764Z",
+      "updatedAt": "2026-06-07T09:51:12.577520Z"
+    },
+    {
+      "id": "tsk_plan_1780806072246_1",
+      "objectiveId": "obj_1780805854637",
+      "title": "Configure Setup & Execution for Help me become a Product Manager",
+      "description": "Setup target environment and tools configs.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 2,
+      "dependencies": [
+        "tsk_plan_1780806072222_0"
+      ],
+      "createdAt": "2026-06-07T09:51:12.246308Z",
+      "updatedAt": "2026-06-07T09:51:12.246317Z"
+    },
+    {
+      "id": "tsk_plan_1780806072271_2",
+      "objectiveId": "obj_1780805854637",
+      "title": "Finalize and Apply Help me become a Product Manager",
+      "description": "Execute form applications or project deployment scripts.",
+      "status": "Pending",
+      "priority": "High",
+      "order": 3,
+      "dependencies": [
+        "tsk_plan_1780806072246_1"
+      ],
+      "createdAt": "2026-06-07T09:51:12.271532Z",
+      "updatedAt": "2026-06-07T09:51:12.271541Z"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "sub_1_1",
+      "taskId": "tsk_1",
+      "title": "Import current CV text file",
+      "status": "Completed",
+      "createdAt": "2026-06-04T08:56:31.118Z"
+    },
+    {
+      "id": "sub_1_2",
+      "taskId": "tsk_1",
+      "title": "Evaluate metrics, product strategy and agile experience",
+      "status": "Completed",
+      "createdAt": "2026-06-04T11:20:31.120Z"
+    },
+    {
+      "id": "sub_3_1",
+      "taskId": "tsk_3",
+      "title": "Create draft spec sheets for project portfolios",
+      "status": "Completed",
+      "createdAt": "2026-06-05T20:56:31.120Z"
+    },
+    {
+      "id": "sub_3_2",
+      "taskId": "tsk_3",
+      "title": "Deploy Next.js template to Azure Static Web Apps",
+      "status": "Pending",
+      "createdAt": "2026-06-07T08:56:31.121Z"
+    },
+    {
+      "id": "sub_plan_1780805854267_0",
+      "taskId": "tsk_plan_1780805854255_0",
+      "title": "Subtask checkpoint for Skill Audit & Gap Review: Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:47:34.267078Z"
+    },
+    {
+      "id": "sub_plan_1780805854290_1",
+      "taskId": "tsk_plan_1780805854278_1",
+      "title": "Subtask checkpoint for Configure Setup & Execution for Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:47:34.290231Z"
+    },
+    {
+      "id": "sub_plan_1780805854315_2",
+      "taskId": "tsk_plan_1780805854303_2",
+      "title": "Subtask checkpoint for Finalize and Apply Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:47:34.315506Z"
+    },
+    {
+      "id": "sub_plan_1780805963116_0",
+      "taskId": "tsk_plan_1780805963105_0",
+      "title": "Subtask checkpoint for Skill Audit & Gap Review: Help me become a Ajax Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:49:23.116795Z"
+    },
+    {
+      "id": "sub_plan_1780805963138_1",
+      "taskId": "tsk_plan_1780805963127_1",
+      "title": "Subtask checkpoint for Configure Setup & Execution for Help me become a Ajax Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:49:23.138352Z"
+    },
+    {
+      "id": "sub_plan_1780805963161_2",
+      "taskId": "tsk_plan_1780805963149_2",
+      "title": "Subtask checkpoint for Finalize and Apply Help me become a Ajax Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:49:23.161564Z"
+    },
+    {
+      "id": "sub_plan_1780806072234_0",
+      "taskId": "tsk_plan_1780806072222_0",
+      "title": "Subtask checkpoint for Skill Audit & Gap Review: Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:51:12.234409Z"
+    },
+    {
+      "id": "sub_plan_1780806072258_1",
+      "taskId": "tsk_plan_1780806072246_1",
+      "title": "Subtask checkpoint for Configure Setup & Execution for Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:51:12.258808Z"
+    },
+    {
+      "id": "sub_plan_1780806072291_2",
+      "taskId": "tsk_plan_1780806072271_2",
+      "title": "Subtask checkpoint for Finalize and Apply Help me become a Product Manager",
+      "status": "Pending",
+      "createdAt": "2026-06-07T09:51:12.291919Z"
+    }
+  ],
+  "agentRuns": [
+    {
+      "id": "run_pm_1",
+      "objectiveId": "obj_pm",
+      "agentName": "Chief Orchestrator",
+      "status": "Running",
+      "startedAt": "2026-06-07T06:56:31.124Z",
+      "logs": [
+        "[Chief Orchestrator] Booted swarm for Objective: Become a Product Manager",
+        "[Chief Orchestrator] Invoking Planner Agent to inspect completed milestones...",
+        "[Planner] Milestones verified. Initializing Task 3: Build PM Portfolio Site.",
+        "[Chief Orchestrator] Routing task to Research Agent for template suggestions.",
+        "[Research] Found 3 modern UI templates on GitHub. Forwarding to Browser Agent...",
+        "[Browser] Initialized headless session. Navigating to template demo sites...",
+        "[Security] Scanned website script scripts/styles. Safe to proceed."
+      ]
+    },
+    {
+      "id": "run_1780822731717",
+      "objectiveId": "obj_pm",
+      "agentName": "Chief Orchestrator",
+      "status": "Success",
+      "startedAt": "2026-06-07T08:58:51.717Z",
+      "logs": [
+        "[Chief Orchestrator] Starting swarm execution for objective: Become a Product Manager",
+        "[Chief Orchestrator] Executing active task: \"Build PM Portfolio Site\"",
+        "[Chief Orchestrator] Routing task details to Security Agent for validation...",
+        "[Security Agent] Auditing safety clearance for task: \"Build PM Portfolio Site\"",
+        "[Chief Orchestrator] Dispatching Research and Browser Agents to gather context...",
+        "[Research Agent] Initiating web search queries for: \"Build PM Portfolio Site\"",
+        "[Research Agent] Tool execution result: Found 3 resources.",
+        "[Memory Agent] Searching episodic and procedural memory databases for relevant context...",
+        "[Memory Agent] Context retrieved: \"Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.\" (tags: cv-analysis, gaps)",
+        "[Validator Agent] Performing validation and structural format checks...",
+        "[Validator Agent] Success. Confidence score rated at 85% (hallucination probability low).",
+        "[Opportunity Agent] Scanning research results for related careers or resources...",
+        "[Opportunity Agent] Found high relevance certification: \"Senior AI Specialist Certifications\" (Score: 79%)",
+        "[Knowledge Agent] Mapping entities and adding knowledge graph edges...",
+        "[Knowledge Agent] Generated node \"Build PM Portfolio Site\" linked to main roadmap.",
+        "[Reflection Agent] Storing strategy feedback. Task execution completed with success status: true",
+        "[Chief Orchestrator] Task \"Build PM Portfolio Site\" executed and validated successfully."
+      ],
+      "endedAt": "2026-06-07T08:58:51.745Z"
+    },
+    {
+      "id": "run_1780822737754",
+      "objectiveId": "obj_pm",
+      "agentName": "Chief Orchestrator",
+      "status": "Paused",
+      "startedAt": "2026-06-07T08:58:57.755Z",
+      "logs": [
+        "[Chief Orchestrator] Starting swarm execution for objective: Become a Product Manager",
+        "[Chief Orchestrator] Executing active task: \"Apply to Selected PM Job Listings\"",
+        "[Chief Orchestrator] Routing task details to Security Agent for validation...",
+        "[Security Agent] Auditing safety clearance for task: \"Apply to Selected PM Job Listings\"",
+        "[Security Agent] WARNING: Sensitive action detected. Created approval request."
+      ],
+      "endedAt": "2026-06-07T08:58:57.766Z"
+    },
+    {
+      "id": "run_1780823025407",
+      "objectiveId": "obj_res_1780823021000",
+      "agentName": "Chief Orchestrator",
+      "status": "Success",
+      "startedAt": "2026-06-07T09:03:45.407Z",
+      "logs": [
+        "[Chief Orchestrator] Starting swarm execution for objective: Job Application: Azure AI PM",
+        "[Chief Orchestrator] Executing active task: \"Analyze context: Unfinished Job Application: Azure AI PM\"",
+        "[Chief Orchestrator] Routing task details to Security Agent for validation...",
+        "[Security Agent] Auditing safety clearance for task: \"Analyze context: Unfinished Job Application: Azure AI PM\"",
+        "[Chief Orchestrator] Dispatching Research and Browser Agents to gather context...",
+        "[Research Agent] Initiating web search queries for: \"Analyze context: Unfinished Job Application: Azure AI PM\"",
+        "[Research Agent] Tool execution result: Found 3 resources.",
+        "[Memory Agent] Searching episodic and procedural memory databases for relevant context...",
+        "[Memory Agent] Context retrieved: \"Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.\" (tags: cv-analysis, gaps)",
+        "[Validator Agent] Performing validation and structural format checks...",
+        "[Validator Agent] Success. Confidence score rated at 82% (hallucination probability low).",
+        "[Opportunity Agent] Scanning research results for related careers or resources...",
+        "[Opportunity Agent] Found high relevance certification: \"Senior AI Specialist Certifications\" (Score: 93%)",
+        "[Knowledge Agent] Mapping entities and adding knowledge graph edges...",
+        "[Knowledge Agent] Generated node \"Analyze context: Unfinished Job Application: Azure AI PM\" linked to main roadmap.",
+        "[Reflection Agent] Storing strategy feedback. Task execution completed with success status: true",
+        "[Chief Orchestrator] Task \"Analyze context: Unfinished Job Application: Azure AI PM\" executed and validated successfully."
+      ],
+      "endedAt": "2026-06-07T09:03:45.437Z"
+    },
+    {
+      "id": "run_1780823031452",
+      "objectiveId": "obj_res_1780823021000",
+      "agentName": "Chief Orchestrator",
+      "status": "Paused",
+      "startedAt": "2026-06-07T09:03:51.452Z",
+      "logs": [
+        "[Chief Orchestrator] Starting swarm execution for objective: Job Application: Azure AI PM",
+        "[Chief Orchestrator] Executing active task: \"Execute: Authorize the Browser Agent to sync your portfolio and submit the application package.\"",
+        "[Chief Orchestrator] Routing task details to Security Agent for validation...",
+        "[Security Agent] Auditing safety clearance for task: \"Execute: Authorize the Browser Agent to sync your portfolio and submit the application package.\"",
+        "[Security Agent] WARNING: Sensitive action detected. Created approval request."
+      ],
+      "endedAt": "2026-06-07T09:03:51.463Z"
+    },
+    {
+      "id": "run_1780805853806",
+      "objectiveId": "obj_1780805745153",
+      "agentName": "Chief Orchestrator",
+      "status": "Success",
+      "startedAt": "2026-06-07T09:47:33.806371Z",
+      "logs": [
+        "[Chief Orchestrator] Init swarm for: 'Help me become a Product Manager'",
+        "[Chief Orchestrator] No task roadmap found. Invoking Planner Agent...",
+        "[Planner Agent] Decomposing objective and scheduling milestone checkpoints...",
+        "[Planner Agent] Successfully queued 3 tasks to roadmap.",
+        "[Chief Orchestrator] Next active task: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+        "[Security Agent] Auditing task payload: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+        "[Research Agent] Searching web databases for: 'Skill Audit & Gap Review: Help me become a Product Manager'...",
+        "[Research Agent] Found 2 web items.",
+        "[Memory Agent] Indexing vector embeddings and querying semantic database...",
+        "[Memory Agent] Context recalled: 'Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.'",
+        "[Validator Agent] Scrutinizing outputs and cross-referencing information...",
+        "[Validator Agent] Scored confidence at 98% accuracy.",
+        "[Opportunity Agent] Scanning outputs for career advancements...",
+        "[Knowledge Agent] Drawing semantic links on the active Knowledge Graph...",
+        "[Reflection Agent] Analyzing task outcomes and updating strategy guides...",
+        "[Chief Orchestrator] Task 'Skill Audit & Gap Review: Help me become a Product Manager' successfully verified."
+      ],
+      "endedAt": "2026-06-07T09:47:34.589065Z"
+    },
+    {
+      "id": "run_1780805963078",
+      "objectiveId": "obj_1780805854611",
+      "agentName": "Chief Orchestrator",
+      "status": "Success",
+      "startedAt": "2026-06-07T09:49:23.078490Z",
+      "logs": [
+        "[Chief Orchestrator] Init swarm for: 'Help me become a Ajax Manager'",
+        "[Chief Orchestrator] No task roadmap found. Invoking Planner Agent...",
+        "[Planner Agent] Decomposing objective and scheduling milestone checkpoints...",
+        "[Planner Agent] Successfully queued 3 tasks to roadmap.",
+        "[Chief Orchestrator] Next active task: 'Skill Audit & Gap Review: Help me become a Ajax Manager'",
+        "[Security Agent] Auditing task payload: 'Skill Audit & Gap Review: Help me become a Ajax Manager'",
+        "[Research Agent] Searching web databases for: 'Skill Audit & Gap Review: Help me become a Ajax Manager'...",
+        "[Research Agent] Found 2 web items.",
+        "[Memory Agent] Indexing vector embeddings and querying semantic database...",
+        "[Memory Agent] Context recalled: 'Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.'",
+        "[Validator Agent] Scrutinizing outputs and cross-referencing information...",
+        "[Validator Agent] Scored confidence at 91% accuracy.",
+        "[Opportunity Agent] Scanning outputs for career advancements...",
+        "[Knowledge Agent] Drawing semantic links on the active Knowledge Graph...",
+        "[Reflection Agent] Analyzing task outcomes and updating strategy guides...",
+        "[Chief Orchestrator] Task 'Skill Audit & Gap Review: Help me become a Ajax Manager' successfully verified."
+      ],
+      "endedAt": "2026-06-07T09:49:23.834781Z"
+    },
+    {
+      "id": "run_1780806072194",
+      "objectiveId": "obj_1780805854637",
+      "agentName": "Chief Orchestrator",
+      "status": "Success",
+      "startedAt": "2026-06-07T09:51:12.194018Z",
+      "logs": [
+        "[Chief Orchestrator] Init swarm for: 'Help me become a Product Manager'",
+        "[Chief Orchestrator] No task roadmap found. Invoking Planner Agent...",
+        "[Planner Agent] Decomposing objective and scheduling milestone checkpoints...",
+        "[Planner Agent] Successfully queued 3 tasks to roadmap.",
+        "[Chief Orchestrator] Next active task: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+        "[Security Agent] Auditing task payload: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+        "[Research Agent] Searching web databases for: 'Skill Audit & Gap Review: Help me become a Product Manager'...",
+        "[Research Agent] Found 2 web items.",
+        "[Memory Agent] Indexing vector embeddings and querying semantic database...",
+        "[Memory Agent] Context recalled: 'Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.'",
+        "[Validator Agent] Scrutinizing outputs and cross-referencing information...",
+        "[Validator Agent] Scored confidence at 89% accuracy.",
+        "[Opportunity Agent] Scanning outputs for career advancements...",
+        "[Knowledge Agent] Drawing semantic links on the active Knowledge Graph...",
+        "[Reflection Agent] Analyzing task outcomes and updating strategy guides...",
+        "[Chief Orchestrator] Task 'Skill Audit & Gap Review: Help me become a Product Manager' successfully verified."
+      ],
+      "endedAt": "2026-06-07T09:51:12.601721Z"
+    }
+  ],
+  "agentMessages": [
+    {
+      "id": "msg_1",
+      "agentRunId": "run_pm_1",
+      "fromAgent": "Chief Orchestrator",
+      "toAgent": "Planner Agent",
+      "content": "Decompose the objective \"Become a Product Manager\" and verify the active subtask requirements.",
+      "timestamp": "2026-06-07T07:08:31.125Z"
+    },
+    {
+      "id": "msg_2",
+      "agentRunId": "run_pm_1",
+      "fromAgent": "Planner Agent",
+      "toAgent": "Chief Orchestrator",
+      "content": "Resume scanning complete. Task 1 and 2 are fully solved. Task 3 is active and requires portfolio build.",
+      "timestamp": "2026-06-07T07:14:31.125Z"
+    }
+  ],
+  "memories": [
+    {
+      "id": "mem_1",
+      "type": "episodic",
+      "content": "Analyzed resume \"Alex_Carter_CV.pdf\". Identified 3 primary gap areas: A/B testing implementation, SQL querying, and pricing metrics optimization.",
+      "tags": [
+        "cv-analysis",
+        "gaps"
+      ],
+      "timestamp": "2026-06-04T08:56:31.126Z"
+    },
+    {
+      "id": "mem_2",
+      "type": "semantic",
+      "content": "Top 3 Product Management frameworks requested in jobs: CIRCLES Method (design), RICE Framework (prioritization), and Kano Model (satisfaction).",
+      "tags": [
+        "frameworks",
+        "study-material"
+      ],
+      "timestamp": "2026-06-04T20:56:31.127Z"
+    },
+    {
+      "id": "mem_3",
+      "type": "procedural",
+      "content": "How to deploy Next.js apps to Azure Static Web Apps: Initialize Azure SWA CLI, configure GitHub workflow configuration, and deploy using API tokens.",
+      "tags": [
+        "deployment",
+        "azure-swa"
+      ],
+      "timestamp": "2026-06-06T08:56:31.127Z"
+    },
+    {
+      "id": "mem_reflect_1780822731741",
+      "type": "procedural",
+      "content": "Learned: Execution of \"Build PM Portfolio Site\" succeeded. The tool parameters chosen performed optimally.",
+      "tags": [
+        "reflection",
+        "strategy"
+      ],
+      "timestamp": "2026-06-07T08:58:51.741Z"
+    },
+    {
+      "id": "mem_res_1780823021003",
+      "type": "intent",
+      "content": "Resurrected Objective \"Job Application: Azure AI PM\" from recovery database. Action step queued.",
+      "tags": [
+        "intent-recovery",
+        "resurrection"
+      ],
+      "timestamp": "2026-06-07T09:03:41.003Z"
+    },
+    {
+      "id": "mem_reflect_1780823025433",
+      "type": "procedural",
+      "content": "Learned: Execution of \"Analyze context: Unfinished Job Application: Azure AI PM\" succeeded. The tool parameters chosen performed optimally.",
+      "tags": [
+        "reflection",
+        "strategy"
+      ],
+      "timestamp": "2026-06-07T09:03:45.433Z"
+    },
+    {
+      "id": "mem_reflect_1780805854551",
+      "type": "procedural",
+      "content": "Learned optimization route for: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+      "tags": [
+        "reflection"
+      ],
+      "timestamp": "2026-06-07T09:47:34.551724Z"
+    },
+    {
+      "id": "mem_reflect_1780805963799",
+      "type": "procedural",
+      "content": "Learned optimization route for: 'Skill Audit & Gap Review: Help me become a Ajax Manager'",
+      "tags": [
+        "reflection"
+      ],
+      "timestamp": "2026-06-07T09:49:23.799831Z"
+    },
+    {
+      "id": "mem_reflect_1780806072566",
+      "type": "procedural",
+      "content": "Learned optimization route for: 'Skill Audit & Gap Review: Help me become a Product Manager'",
+      "tags": [
+        "reflection"
+      ],
+      "timestamp": "2026-06-07T09:51:12.566460Z"
+    }
+  ],
+  "documents": [],
+  "knowledgeNodes": [
+    {
+      "id": "kn_user",
+      "type": "person",
+      "label": "Alex Carter",
+      "properties": {
+        "role": "Admin"
+      },
+      "createdAt": "2026-06-07T08:56:31.131Z"
+    },
+    {
+      "id": "kn_obj",
+      "type": "objective",
+      "label": "Become a Product Manager",
+      "properties": {
+        "complexity": "High"
+      },
+      "createdAt": "2026-06-07T08:56:31.132Z"
+    },
+    {
+      "id": "kn_tsk3",
+      "type": "task",
+      "label": "Build PM Portfolio Site",
+      "properties": {
+        "status": "InProgress"
+      },
+      "createdAt": "2026-06-07T08:56:31.133Z"
+    },
+    {
+      "id": "kn_opp1",
+      "type": "opportunity",
+      "label": "Technical Product Manager, Azure AI",
+      "properties": {
+        "company": "Microsoft",
+        "relevance": "96%"
+      },
+      "createdAt": "2026-06-07T08:56:31.133Z"
+    },
+    {
+      "id": "kn_doc",
+      "type": "document",
+      "label": "Alex_Carter_CV.pdf",
+      "properties": {
+        "type": "Resume"
+      },
+      "createdAt": "2026-06-07T08:56:31.134Z"
+    },
+    {
+      "id": "kn_insight",
+      "type": "insight",
+      "label": "Skill Gap: A/B Testing & SQL",
+      "properties": {
+        "confidence": "92%"
+      },
+      "createdAt": "2026-06-07T08:56:31.135Z"
+    },
+    {
+      "id": "kn_auto_1780822731737",
+      "type": "task",
+      "label": "Build PM Portfolio Site",
+      "properties": {
+        "taskId": "tsk_3",
+        "completed": true
+      },
+      "createdAt": "2026-06-07T08:58:51.737Z"
+    },
+    {
+      "id": "kn_auto_1780823025428",
+      "type": "task",
+      "label": "Analyze context: Unfinished Job Application: Azure AI PM",
+      "properties": {
+        "taskId": "tsk_res_1780823021001_1",
+        "completed": true
+      },
+      "createdAt": "2026-06-07T09:03:45.428Z"
+    },
+    {
+      "id": "kn_auto_1780805854514",
+      "type": "task",
+      "label": "Skill Audit & Gap Review: Help me become a Product Manager",
+      "properties": {
+        "taskId": "tsk_plan_1780805854255_0",
+        "stage": "completed"
+      },
+      "createdAt": "2026-06-07T09:47:34.514160Z"
+    },
+    {
+      "id": "kn_auto_1780805963764",
+      "type": "task",
+      "label": "Skill Audit & Gap Review: Help me become a Ajax Manager",
+      "properties": {
+        "taskId": "tsk_plan_1780805963105_0",
+        "stage": "completed"
+      },
+      "createdAt": "2026-06-07T09:49:23.764134Z"
+    },
+    {
+      "id": "kn_auto_1780806072529",
+      "type": "task",
+      "label": "Skill Audit & Gap Review: Help me become a Product Manager",
+      "properties": {
+        "taskId": "tsk_plan_1780806072222_0",
+        "stage": "completed"
+      },
+      "createdAt": "2026-06-07T09:51:12.529562Z"
+    }
+  ],
+  "knowledgeEdges": [
+    {
+      "id": "ke_1",
+      "sourceNodeId": "kn_user",
+      "targetNodeId": "kn_obj",
+      "type": "supports",
+      "label": "owns",
+      "createdAt": "2026-06-07T08:56:31.136Z"
+    },
+    {
+      "id": "ke_2",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_tsk3",
+      "type": "depends_on",
+      "label": "requires",
+      "createdAt": "2026-06-07T08:56:31.136Z"
+    },
+    {
+      "id": "ke_3",
+      "sourceNodeId": "kn_tsk3",
+      "targetNodeId": "kn_doc",
+      "type": "related_to",
+      "label": "references",
+      "createdAt": "2026-06-07T08:56:31.137Z"
+    },
+    {
+      "id": "ke_4",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_opp1",
+      "type": "related_to",
+      "label": "unlocks",
+      "createdAt": "2026-06-07T08:56:31.138Z"
+    },
+    {
+      "id": "ke_5",
+      "sourceNodeId": "kn_doc",
+      "targetNodeId": "kn_insight",
+      "type": "generated_by",
+      "label": "revealed",
+      "createdAt": "2026-06-07T08:56:31.139Z"
+    },
+    {
+      "id": "ke_6",
+      "sourceNodeId": "kn_insight",
+      "targetNodeId": "kn_obj",
+      "type": "blocks",
+      "label": "obstructs",
+      "createdAt": "2026-06-07T08:56:31.139Z"
+    },
+    {
+      "id": "ke_auto_1780822731739",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_auto_1780822731737",
+      "type": "depends_on",
+      "label": "defines",
+      "createdAt": "2026-06-07T08:58:51.739Z"
+    },
+    {
+      "id": "ke_auto_1780823025430",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_auto_1780823025428",
+      "type": "depends_on",
+      "label": "defines",
+      "createdAt": "2026-06-07T09:03:45.430Z"
+    },
+    {
+      "id": "ke_auto_1780805854526",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_auto_1780805854514",
+      "type": "depends_on",
+      "label": "defines",
+      "createdAt": "2026-06-07T09:47:34.526277Z"
+    },
+    {
+      "id": "ke_auto_1780805963775",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_auto_1780805963764",
+      "type": "depends_on",
+      "label": "defines",
+      "createdAt": "2026-06-07T09:49:23.775146Z"
+    },
+    {
+      "id": "ke_auto_1780806072542",
+      "sourceNodeId": "kn_obj",
+      "targetNodeId": "kn_auto_1780806072529",
+      "type": "depends_on",
+      "label": "defines",
+      "createdAt": "2026-06-07T09:51:12.542629Z"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "opp_1",
+      "title": "Technical Product Manager, Azure AI",
+      "description": "Microsoft Redmond / Remote. Lead core engineering cohorts building next-gen developer APIs for AI model orchestrations.",
+      "type": "job",
+      "url": "https://careers.microsoft.com/jobs/azure-ai-pm",
+      "metadata": {
+        "company": "Microsoft",
+        "salary": "$140k - $210k",
+        "matchesGaps": [
+          "Azure AI Services"
+        ]
+      },
+      "relevanceScore": 96,
+      "status": "applied",
+      "createdAt": "2026-06-06T20:56:31.128Z"
+    },
+    {
+      "id": "opp_2",
+      "title": "Certified Product Manager (CPM)",
+      "description": "AIPMM Official certification program focusing on core product lifecycle management.",
+      "type": "certification",
+      "url": "https://aipmm.com/certified-product-manager",
+      "metadata": {
+        "provider": "AIPMM",
+        "duration": "6 weeks",
+        "cost": "$795"
+      },
+      "relevanceScore": 88,
+      "status": "applied",
+      "createdAt": "2026-06-05T08:56:31.128Z"
+    },
+    {
+      "id": "opp_auto_1780822731735",
+      "title": "Senior AI Specialist Certifications",
+      "description": "Acquire credentials on deep learning deployments. Matches current PM learning milestones.",
+      "type": "certification",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer",
+      "metadata": {
+        "duration": "3 weeks",
+        "score": 79
+      },
+      "relevanceScore": 79,
+      "status": "discovered",
+      "createdAt": "2026-06-07T08:58:51.735Z"
+    },
+    {
+      "id": "opp_auto_1780823025425",
+      "title": "Senior AI Specialist Certifications",
+      "description": "Acquire credentials on deep learning deployments. Matches current PM learning milestones.",
+      "type": "certification",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer",
+      "metadata": {
+        "duration": "3 weeks",
+        "score": 93
+      },
+      "relevanceScore": 93,
+      "status": "discovered",
+      "createdAt": "2026-06-07T09:03:45.425Z"
+    },
+    {
+      "id": "opp_auto_1780805854486",
+      "title": "Principal AI PM Certification Course",
+      "description": "Recommended by Opportunity Swarm. Fits gap areas.",
+      "type": "certification",
+      "url": "https://careers.microsoft.com",
+      "metadata": {
+        "duration": "4 weeks",
+        "cost": "$499"
+      },
+      "relevanceScore": 88,
+      "status": "discovered",
+      "createdAt": "2026-06-07T09:47:34.486239Z"
+    },
+    {
+      "id": "opp_auto_1780805963739",
+      "title": "Principal AI PM Certification Course",
+      "description": "Recommended by Opportunity Swarm. Fits gap areas.",
+      "type": "certification",
+      "url": "https://careers.microsoft.com",
+      "metadata": {
+        "duration": "4 weeks",
+        "cost": "$499"
+      },
+      "relevanceScore": 98,
+      "status": "discovered",
+      "createdAt": "2026-06-07T09:49:23.739293Z"
+    },
+    {
+      "id": "opp_auto_1780806072504",
+      "title": "Principal AI PM Certification Course",
+      "description": "Recommended by Opportunity Swarm. Fits gap areas.",
+      "type": "certification",
+      "url": "https://careers.microsoft.com",
+      "metadata": {
+        "duration": "4 weeks",
+        "cost": "$499"
+      },
+      "relevanceScore": 83,
+      "status": "discovered",
+      "createdAt": "2026-06-07T09:51:12.504431Z"
+    }
+  ],
+  "approvals": [
+    {
+      "id": "app_1",
+      "objectiveId": "obj_pm",
+      "taskId": "tsk_4",
+      "actionType": "application",
+      "requestDetails": "Browser Agent seeks permission to submit applicant profile and pre-filled responses to \"Technical Product Manager - Azure AI\" (Job ID: Azure-10928) on Microsoft Careers Portal.",
+      "status": "pending",
+      "requestedBy": "Browser Agent",
+      "createdAt": "2026-06-07T08:36:31.129Z"
+    },
+    {
+      "id": "app_1780822737764",
+      "objectiveId": "obj_pm",
+      "taskId": "tsk_4",
+      "actionType": "external-communication",
+      "requestDetails": "Browser Agent requested permission to apply to jobs using user profile info for task: \"Apply to Selected PM Job Listings\"",
+      "status": "pending",
+      "requestedBy": "Browser Agent",
+      "createdAt": "2026-06-07T08:58:57.764Z"
+    },
+    {
+      "id": "app_1780823031461",
+      "objectiveId": "obj_res_1780823021000",
+      "taskId": "tsk_res_1780823021002_2",
+      "actionType": "external-communication",
+      "requestDetails": "Browser Agent requested permission to apply to jobs using user profile info for task: \"Execute: Authorize the Browser Agent to sync your portfolio and submit the application package.\"",
+      "status": "pending",
+      "requestedBy": "Browser Agent",
+      "createdAt": "2026-06-07T09:03:51.461Z"
+    }
+  ],
+  "executions": [],
+  "browserCaptures": [],
+  "toolRegistry": [
+    {
+      "id": "tool_search",
+      "name": "Bing Web Search",
+      "description": "Queries the internet for current job postings, market trends, and learning resources.",
+      "permissions": [
+        "network"
+      ],
+      "capabilities": [
+        "search",
+        "url_discovery"
+      ],
+      "executionEndpoint": "/api/tools/execute/search"
+    },
+    {
+      "id": "tool_browser",
+      "name": "Playwright Browser",
+      "description": "Automates browser actions to crawl sites, download PDFs, and fill application forms.",
+      "permissions": [
+        "network",
+        "browser_execution"
+      ],
+      "capabilities": [
+        "scraping",
+        "screenshots",
+        "form_interaction"
+      ],
+      "executionEndpoint": "/api/tools/execute/browser"
+    },
+    {
+      "id": "tool_docintel",
+      "name": "Azure Document Intelligence",
+      "description": "Extracts tabular and structured textual information from PDF CVs or specifications.",
+      "permissions": [
+        "read_file"
+      ],
+      "capabilities": [
+        "ocr",
+        "document_extraction"
+      ],
+      "executionEndpoint": "/api/tools/execute/docintel"
+    },
+    {
+      "id": "tool_email",
+      "name": "Outlook Client",
+      "description": "Sends updates, files reports, and coordinates with external recruitment contacts.",
+      "permissions": [
+        "email_send",
+        "email_read"
+      ],
+      "capabilities": [
+        "email_delivery",
+        "inbox_scan"
+      ],
+      "executionEndpoint": "/api/tools/execute/email"
+    }
+  ],
+  "auditLogs": [],
+  "notifications": [
+    {
+      "id": "not_1",
+      "userId": "usr_admin",
+      "title": "New High-Relevance Job Discovered",
+      "message": "Opportunity Agent found \"Technical Product Manager, Azure AI\" matching your PM roadmap (96% Match score).",
+      "type": "info",
+      "read": false,
+      "createdAt": "2026-06-06T21:56:31.130Z"
+    },
+    {
+      "id": "not_2",
+      "userId": "usr_admin",
+      "title": "Approval Required",
+      "message": "Browser Agent is ready to submit application for Azure AI TPM. Review details and approve.",
+      "type": "approval_required",
+      "read": false,
+      "createdAt": "2026-06-07T08:36:31.131Z"
+    },
+    {
+      "id": "not_comp_1780822731746",
+      "userId": "usr_admin",
+      "title": "Task Completed",
+      "message": "The swarm completed execution for: Build PM Portfolio Site.",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-07T08:58:51.746Z"
+    },
+    {
+      "id": "not_app_1780822737765",
+      "userId": "usr_admin",
+      "title": "Action Requires Approval",
+      "message": "The agent swarm requires approval to proceed with task \"Apply to Selected PM Job Listings\".",
+      "type": "approval_required",
+      "read": false,
+      "createdAt": "2026-06-07T08:58:57.765Z"
+    },
+    {
+      "id": "not_comp_1780823025439",
+      "userId": "usr_admin",
+      "title": "Task Completed",
+      "message": "The swarm completed execution for: Analyze context: Unfinished Job Application: Azure AI PM.",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-07T09:03:45.439Z"
+    },
+    {
+      "id": "not_app_1780823031462",
+      "userId": "usr_admin",
+      "title": "Action Requires Approval",
+      "message": "The agent swarm requires approval to proceed with task \"Execute: Authorize the Browser Agent to sync your portfolio and submit the application package.\".",
+      "type": "approval_required",
+      "read": false,
+      "createdAt": "2026-06-07T09:03:51.462Z"
+    },
+    {
+      "id": "not_comp_1780805854599",
+      "userId": "usr_admin",
+      "title": "Swarm Milestone Met",
+      "message": "Successfully finished: Skill Audit & Gap Review: Help me become a Product Manager",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-07T09:47:34.599590Z"
+    },
+    {
+      "id": "not_comp_1780805963847",
+      "userId": "usr_admin",
+      "title": "Swarm Milestone Met",
+      "message": "Successfully finished: Skill Audit & Gap Review: Help me become a Ajax Manager",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-07T09:49:23.847260Z"
+    },
+    {
+      "id": "not_comp_1780806072613",
+      "userId": "usr_admin",
+      "title": "Swarm Milestone Met",
+      "message": "Successfully finished: Skill Audit & Gap Review: Help me become a Product Manager",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-07T09:51:12.613046Z"
+    }
+  ],
+  "chromeHistory": [
+    {
+      "id": "ch_1",
+      "url": "https://careers.microsoft.com/jobs/azure-ai-pm",
+      "title": "Technical Product Manager, Azure AI at Microsoft",
+      "visitFrequency": 4,
+      "visitTimestamp": "2026-06-07T07:47:21.587Z",
+      "sessionDuration": 320,
+      "domain": "careers.microsoft.com",
+      "timestamp": "2026-06-07T07:47:21.587Z"
+    },
+    {
+      "id": "ch_2",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer",
+      "title": "Microsoft Certified: Azure AI Engineer Associate",
+      "visitFrequency": 3,
+      "visitTimestamp": "2026-06-07T06:47:21.587Z",
+      "sessionDuration": 180,
+      "domain": "learn.microsoft.com",
+      "timestamp": "2026-06-07T06:47:21.587Z"
+    },
+    {
+      "id": "ch_3",
+      "url": "https://github.com/microsoft/semantic-kernel",
+      "title": "GitHub - microsoft/semantic-kernel: Integrate LLM technology quickly",
+      "visitFrequency": 5,
+      "visitTimestamp": "2026-06-07T02:47:21.588Z",
+      "sessionDuration": 450,
+      "domain": "github.com",
+      "timestamp": "2026-06-07T02:47:21.588Z"
+    },
+    {
+      "id": "ch_4",
+      "url": "https://www.productschool.com/blog/product-management-frameworks",
+      "title": "Product Management Frameworks: RICE, Kano and CIRCLES",
+      "visitFrequency": 2,
+      "visitTimestamp": "2026-06-06T08:47:21.589Z",
+      "sessionDuration": 110,
+      "domain": "productschool.com",
+      "timestamp": "2026-06-06T08:47:21.589Z"
+    }
+  ],
+  "intentSignals": [
+    {
+      "id": "is_1",
+      "inferredObjective": "Pivot Careers to AI Product Management",
+      "sourceWebsites": [
+        "careers.microsoft.com",
+        "productschool.com"
+      ],
+      "confidenceScore": 88,
+      "timestamp": "2026-06-07T08:56:31.140Z"
+    },
+    {
+      "id": "is_2",
+      "inferredObjective": "Build AI Product Swarm with Semantic Kernel",
+      "sourceWebsites": [
+        "github.com/microsoft/semantic-kernel",
+        "learn.microsoft.com"
+      ],
+      "confidenceScore": 92,
+      "timestamp": "2026-06-07T08:56:31.141Z"
+    }
+  ],
+  "intentRecoveries": [
+    {
+      "id": "ir_1",
+      "title": "Unfinished Job Application: Azure AI PM",
+      "description": "You visited the Azure AI PM job application page 4 times today but have not submitted your profile.",
+      "status": "resurrected",
+      "originalContextSnippet": "Careers at Microsoft - Job ID: Azure-10928. Pre-requisites include Cosmos DB and LLM orchestrator skills.",
+      "suggestedNextAction": "Authorize the Browser Agent to sync your portfolio and submit the application package.",
+      "createdAt": "2026-06-07T05:56:31.141Z"
+    },
+    {
+      "id": "ir_2",
+      "title": "Abandoned Research: Semantic Kernel Orchestrator",
+      "description": "You completed extensive reading on Semantic Kernel but did not initialize a local project or test workspace.",
+      "status": "pending",
+      "originalContextSnippet": "GitHub documentation on C# and TypeScript Semantic Kernel setup, memory stores, and planners.",
+      "suggestedNextAction": "Resurrect research context. Generate a Node.js project scaffold with Semantic Kernel dependencies configured.",
+      "createdAt": "2026-06-06T14:56:31.142Z"
+    },
+    {
+      "id": "ir_3",
+      "title": "Stalled Course: Product Metrics & Analytics",
+      "description": "You visited ProductSchool metrics tutorials 2 days ago but did not finish the RICE framework calculation exercise.",
+      "status": "pending",
+      "originalContextSnippet": "RICE scoring: Reach * Impact * Confidence / Effort. Essential module for PM case study preparation.",
+      "suggestedNextAction": "Review RICE methodology cheat sheet and complete the quiz.",
+      "createdAt": "2026-06-05T08:56:31.143Z"
+    }
+  ],
+  "weeklyReflections": [
+    {
+      "id": "wr_1",
+      "dateRange": "May 31 - June 6, 2026",
+      "objectivesAdvanced": [
+        "Become a Product Manager: Completed skill gap analysis and generated learning roadmap."
+      ],
+      "objectivesStalled": [
+        "Launch a SaaS Startup: 0 tasks completed this week. Recommend allocation of 2 focus hours."
+      ],
+      "researchAbandoned": [
+        "Semantic Kernel Orchestrator setup (3 references analyzed, no code artifacts built)."
+      ],
+      "missedOpportunities": [
+        "Technical Product Manager role at Azure AI. Relevance rating matches 96% of your experience."
+      ],
+      "suggestedRecoveries": [
+        "Resurrect Semantic Kernel integration details and scaffold demo project.",
+        "Submit application for Azure AI PM."
+      ],
+      "recommendedActions": [
+        "Approve the Browser Agent submission for Azure AI PM.",
+        "Initialize Semantic Kernel project template using packages workspace.",
+        "Spend 30 minutes on SaaS concept specification document."
+      ],
+      "createdAt": "2026-06-07T08:56:31.143Z"
+    },
+    {
+      "id": "wr_auto_1780822731715",
+      "dateRange": "June 1 - June 7, 2026",
+      "objectivesAdvanced": [
+        "Become a Product Manager: Active execution sequence progress."
+      ],
+      "objectivesStalled": [
+        "None"
+      ],
+      "researchAbandoned": [
+        "Semantic Kernel Orchestrator setup (3 references analyzed, no code artifacts built)."
+      ],
+      "missedOpportunities": [
+        "Technical Product Manager role at Azure AI. Relevance rating matches 96% of your experience."
+      ],
+      "suggestedRecoveries": [
+        "Resurrect Semantic Kernel integration details and scaffold demo project.",
+        "Submit application for Azure AI PM."
+      ],
+      "recommendedActions": [
+        "Approve the Browser Agent submission for Azure AI PM.",
+        "Initialize Semantic Kernel project template using packages workspace.",
+        "Spend 30 minutes on SaaS concept specification document."
+      ],
+      "createdAt": "2026-06-07T08:58:51.715Z"
+    }
+  ]
+}
