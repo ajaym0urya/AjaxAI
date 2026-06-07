@@ -11,10 +11,6 @@ on:
         default: uaenorth
 
 env:
-<<<<<<< HEAD
-  AZURE_LOCATION: ${{ github.event.inputs.location || vars.AZURE_LOCATION || 'centralindia' }}
-  AZURE_RESOURCE_GROUP: rg-ajaxai-prod
-=======
   AZURE_LOCATION: uaenorth
   AZURE_RESOURCE_GROUP: ajaxai-rg7
   AZURE_LOG_ANALYTICS_WORKSPACE: law-ajaxai-prod
