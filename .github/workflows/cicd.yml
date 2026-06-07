@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_LOCATION: eastus
-  AZURE_RESOURCE_GROUP: rg-ajaxai-prod
+  AZURE_LOCATION: uaenorth
+  AZURE_RESOURCE_GROUP: ajaxai-rg7
   AZURE_LOG_ANALYTICS_WORKSPACE: law-ajaxai-prod
   AZURE_CONTAINERAPPS_ENV: cae-ajaxai-prod
   AZURE_FRONTEND_APP: ajaxai-frontend
