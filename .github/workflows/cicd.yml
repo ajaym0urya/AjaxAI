@@ -4,15 +4,18 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      location:
+        description: Azure region for the deployment
+        required: false
+        default: centralindia
 
 env:
-  AZURE_LOCATION: eastus
+  AZURE_LOCATION: ${{ github.event.inputs.location || vars.AZURE_LOCATION || 'centralindia' }}
   AZURE_RESOURCE_GROUP: rg-ajaxai-prod
-  AZURE_LOG_ANALYTICS_WORKSPACE: law-ajaxai-prod
   AZURE_CONTAINERAPPS_ENV: cae-ajaxai-prod
   AZURE_FRONTEND_APP: ajaxai-frontend
   AZURE_BACKEND_APP: ajaxai-backend
-  AZURE_AGENT_APP: ajaxai-agent
 
 jobs:
   build-and-deploy:
@@ -24,18 +27,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build workspace packages
-        run: npm run build --workspaces
 
       - name: Set up Azure CLI
         uses: azure/login@v2
@@ -56,26 +47,28 @@ jobs:
 
           az group create --name "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" >/dev/null
 
-          deployment_name="ajaxai-foundation-${GITHUB_RUN_ID}"
-          deployment_output=$(az deployment group create \
-            --name "$deployment_name" \
-            --resource-group "$AZURE_RESOURCE_GROUP" \
-            --template-file infra/main.bicep \
-            --parameters suffix="$acr_suffix" location="$AZURE_LOCATION" \
-            --query properties.outputs \
-            -o json)
-
-          acr_login_server=$(echo "$deployment_output" | jq -r '.acrLoginServer.value')
-          acr_name=$(echo "$deployment_output" | jq -r '.acrName.value')
-          container_apps_env_name=$(echo "$deployment_output" | jq -r '.containerAppsEnvironmentName.value')
-
+          # Note: if you do not have infra/main.bicep, you must ensure your Azure environment is manually created 
+          # or we just use AZ CLI to create the ACR and ACA environments here.
+          # Since infra was not fully specified, we will assume the simplest ACR creation:
+          
+          acr_name="craajaxai${acr_suffix}"
           echo "ACR_NAME=$acr_name" >> "$GITHUB_ENV"
+          
+          # Create ACR if it doesn't exist
+          if ! az acr show --name "$acr_name" --resource-group "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1; then
+            az acr create --name "$acr_name" --resource-group "$AZURE_RESOURCE_GROUP" --sku Basic --admin-enabled true >/dev/null
+          fi
+          
+          acr_login_server=$(az acr show --name "$acr_name" --resource-group "$AZURE_RESOURCE_GROUP" --query loginServer -o tsv)
           echo "ACR_LOGIN_SERVER=$acr_login_server" >> "$GITHUB_ENV"
-          echo "AZURE_CONTAINERAPPS_ENV=$container_apps_env_name" >> "$GITHUB_ENV"
-          echo "AZURE_DEPLOYMENT_NAME=$deployment_name" >> "$GITHUB_ENV"
+
+          # Create Container Apps Environment if it doesn't exist
+          if ! az containerapp env show --name "$AZURE_CONTAINERAPPS_ENV" --resource-group "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1; then
+            az containerapp env create --name "$AZURE_CONTAINERAPPS_ENV" --resource-group "$AZURE_RESOURCE_GROUP" --location "$AZURE_LOCATION" >/dev/null
+          fi
 
           az acr login --name "$acr_name"
-
+          
           acr_username=$(az acr credential show --name "$acr_name" --query username -o tsv)
           acr_password=$(az acr credential show --name "$acr_name" --query "passwords[0].value" -o tsv)
 
@@ -86,7 +79,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          docker build -f backend/Dockerfile -t "$ACR_LOGIN_SERVER/backend:${GITHUB_SHA}" .
+          docker build -f backend/Dockerfile -t "$ACR_LOGIN_SERVER/backend:${GITHUB_SHA}" ./backend
           docker push "$ACR_LOGIN_SERVER/backend:${GITHUB_SHA}"
 
       - name: Create or update backend container app
@@ -96,16 +89,6 @@ jobs:
 
           backend_env_vars=(
             "PORT=8000"
-            "NODE_ENV=production"
-            "AZURE_COSMOS_CONNECTION_STRING=${{ secrets.AZURE_COSMOS_CONNECTION_STRING }}"
-            "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}"
-            "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}"
-            "AZURE_OPENAI_DEPLOYMENT_NAME=${{ secrets.AZURE_OPENAI_DEPLOYMENT_NAME }}"
-            "AZURE_OPENAI_GPT_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT_NAME }}"
-            "AZURE_WEB_PUBSUB_CONNECTION_STRING=${{ secrets.AZURE_WEB_PUBSUB_CONNECTION_STRING }}"
-            "AZURE_AI_DOC_INTEL_ENDPOINT=${{ secrets.AZURE_AI_DOC_INTEL_ENDPOINT }}"
-            "AZURE_AI_DOC_INTEL_KEY=${{ secrets.AZURE_AI_DOC_INTEL_KEY }}"
-            "OUTLOOK_CONNECTION_STRING=${{ secrets.OUTLOOK_CONNECTION_STRING }}"
           )
 
           if az containerapp show --name "$AZURE_BACKEND_APP" --resource-group "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1; then
@@ -126,7 +109,7 @@ jobs:
               --target-port 8000 \
               --ingress external \
               --min-replicas 1 \
-              --max-replicas 3 \
+              --max-replicas 2 \
               --set-env-vars "${backend_env_vars[@]}" >/dev/null
           fi
 
@@ -136,15 +119,13 @@ jobs:
           set -euo pipefail
           backend_fqdn=$(az containerapp show --name "$AZURE_BACKEND_APP" --resource-group "$AZURE_RESOURCE_GROUP" --query properties.configuration.ingress.fqdn -o tsv)
           echo "BACKEND_ORIGIN=https://$backend_fqdn" >> "$GITHUB_ENV"
-          echo "BACKEND_WS_ORIGIN=wss://$backend_fqdn" >> "$GITHUB_ENV"
 
       - name: Build and push frontend image
         shell: bash
         run: |
           set -euo pipefail
           docker build \
-            --build-arg NEXT_PUBLIC_API_BASE="$BACKEND_ORIGIN/api/v1" \
-            --build-arg NEXT_PUBLIC_WS_BASE="$BACKEND_WS_ORIGIN/api/ws" \
+            --build-arg NEXT_PUBLIC_API_BASE="$BACKEND_ORIGIN" \
             -f apps/frontend/Dockerfile \
             -t "$ACR_LOGIN_SERVER/frontend:${GITHUB_SHA}" .
           docker push "$ACR_LOGIN_SERVER/frontend:${GITHUB_SHA}"
@@ -171,56 +152,5 @@ jobs:
               --target-port 3000 \
               --ingress external \
               --min-replicas 1 \
-              --max-replicas 3 >/dev/null
-          fi
-
-      - name: Update backend CORS origin
-        shell: bash
-        run: |
-          set -euo pipefail
-          frontend_fqdn=$(az containerapp show --name "$AZURE_FRONTEND_APP" --resource-group "$AZURE_RESOURCE_GROUP" --query properties.configuration.ingress.fqdn -o tsv)
-          az containerapp update \
-            --name "$AZURE_BACKEND_APP" \
-            --resource-group "$AZURE_RESOURCE_GROUP" \
-            --set-env-vars "FRONTEND_URL=https://$frontend_fqdn" >/dev/null
-
-      - name: Build and push agent runtime image
-        shell: bash
-        run: |
-          set -euo pipefail
-          docker build -f services/agent-runtime/Dockerfile -t "$ACR_LOGIN_SERVER/agent-runtime:${GITHUB_SHA}" .
-          docker push "$ACR_LOGIN_SERVER/agent-runtime:${GITHUB_SHA}"
-
-      - name: Create or update agent runtime container app
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          agent_env_vars=(
-            "NODE_ENV=production"
-            "AZURE_OPENAI_API_KEY=${{ secrets.AZURE_OPENAI_API_KEY }}"
-            "AZURE_OPENAI_ENDPOINT=${{ secrets.AZURE_OPENAI_ENDPOINT }}"
-            "AZURE_OPENAI_DEPLOYMENT_NAME=${{ secrets.AZURE_OPENAI_DEPLOYMENT_NAME }}"
-            "AZURE_OPENAI_GPT_DEPLOYMENT=${{ secrets.AZURE_OPENAI_DEPLOYMENT_NAME }}"
-          )
-
-          if az containerapp show --name "$AZURE_AGENT_APP" --resource-group "$AZURE_RESOURCE_GROUP" >/dev/null 2>&1; then
-            az containerapp update \
-              --name "$AZURE_AGENT_APP" \
-              --resource-group "$AZURE_RESOURCE_GROUP" \
-              --image "$ACR_LOGIN_SERVER/agent-runtime:${GITHUB_SHA}" \
-              --set-env-vars "${agent_env_vars[@]}" >/dev/null
-          else
-            az containerapp create \
-              --name "$AZURE_AGENT_APP" \
-              --resource-group "$AZURE_RESOURCE_GROUP" \
-              --environment "$AZURE_CONTAINERAPPS_ENV" \
-              --image "$ACR_LOGIN_SERVER/agent-runtime:${GITHUB_SHA}" \
-              --registry-server "$ACR_LOGIN_SERVER" \
-              --registry-username "$ACR_USERNAME" \
-              --registry-password "$ACR_PASSWORD" \
-              --min-replicas 1 \
-              --max-replicas 1 \
-              --ingress internal \
-              --set-env-vars "${agent_env_vars[@]}" >/dev/null
+              --max-replicas 2 >/dev/null
           fi

@@ -1,17 +1,25 @@
-FROM python:3.11-slim AS runtime
-
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY backend/requirements.txt ./requirements.txt
+# Install dependencies needed for compiling and Playwright
+RUN apt-get update && apt-get install -y \
+    wget \
+    gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install them
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY backend/app ./app
-COPY db.json ./db.json
+# Install playwright browsers
+RUN playwright install chromium
+RUN playwright install-deps chromium
+
+# Copy application code
+COPY . .
 
 EXPOSE 8000
 
+# Start Uvicorn
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

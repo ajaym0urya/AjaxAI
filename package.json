@@ -1,26 +1,19 @@
 {
   "name": "ajaxai-monorepo",
   "version": "1.0.0",
-  "description": "AjaxAI Autonomous AI Operating System Monorepo",
+  "description": "AjaxAI Autonomous AI Operating System UI",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "services/*",
     "apps/*"
   ],
   "scripts": {
     "install:all": "npm install",
     "dev:python": "cd backend && .venv\\Scripts\\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
     "dev:frontend": "npm run dev --workspace=apps/frontend",
-    "dev:backend": "npm run dev --workspace=services/backend",
-    "dev:agent": "npm run dev --workspace=services/agent-runtime",
     "dev": "concurrently \"npm run dev:python\" \"npm run dev:frontend\"",
-    "build": "npm run build --workspaces",
-    "seed": "npm run seed --workspace=packages/shared",
-    "start:frontend": "npm run start --workspace=apps/frontend",
-    "start:backend": "npm run start --workspace=services/backend",
-    "start:agent": "npm run start --workspace=services/agent-runtime",
-    "test": "npm run test --workspaces"
+    "build": "npm run build --workspace=apps/frontend",
+    "start": "npm run start --workspace=apps/frontend",
+    "test": "npm run test --workspace=apps/frontend"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
