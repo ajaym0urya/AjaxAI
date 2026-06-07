@@ -17,15 +17,7 @@ class PlannerAgent(BaseAgent):
     
     title = objective.get("title", "")
 
-    # Fallback mock for when Azure keys are not yet configured
-    fallback_mock = {
-      "tasks": [
-        { "title": "Initial Assessment", "desc": "Analyzed current status and requirements." },
-        { "title": "Resource Gathering", "desc": "Collected required materials and guides." },
-        { "title": "Finding opportunities", "desc": "Searching for relevant milestones." },
-        { "title": "Execution Plan", "desc": "Drafted the step-by-step action plan." }
-      ]
-    }
+
 
     system_prompt = """
     You are an autonomous AI Chief of Staff.
@@ -43,8 +35,11 @@ class PlannerAgent(BaseAgent):
 
     user_prompt = f"Goal: {title}"
 
-    response_data = await generate_json(system_prompt, user_prompt, fallback_mock)
-    tasks_data = response_data.get("tasks", fallback_mock["tasks"])
+    response_data = await generate_json(system_prompt, user_prompt)
+    if "error" in response_data:
+        tasks_data = [{"title": "API Error", "desc": str(response_data["error"])}]
+    else:
+        tasks_data = response_data.get("tasks", [{"title": "Error", "desc": "Invalid JSON format from LLM"}])
 
     created_tasks = []
     for idx, t_info in enumerate(tasks_data):

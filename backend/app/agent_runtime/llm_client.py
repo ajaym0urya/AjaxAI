@@ -5,29 +5,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# We will use dummy responses if the user hasn't configured the keys yet
-_is_configured = bool(os.getenv("AZURE_OPENAI_API_KEY") and os.getenv("AZURE_OPENAI_ENDPOINT"))
+# We strictly require the keys now
+client = AsyncAzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY", ""),
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT", "")
+)
+deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o")
 
-if _is_configured:
-    client = AsyncAzureOpenAI(
-        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
-        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT", "")
-    )
-    deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o")
-else:
-    client = None
-    deployment_name = None
-
-async def generate_json(system_prompt: str, user_prompt: str, fallback_mock: dict) -> dict:
+async def generate_json(system_prompt: str, user_prompt: str) -> dict:
     """
     Calls Azure OpenAI to generate a JSON response. 
-    If keys are not configured, returns the fallback_mock.
+    Fails loudly if there's an error so we know if keys are wrong.
     """
-    if not _is_configured:
-        print("[LLM Client] Keys missing. Falling back to mock data.")
-        return fallback_mock
-
     try:
         response = await client.chat.completions.create(
             model=deployment_name,
@@ -42,4 +32,6 @@ async def generate_json(system_prompt: str, user_prompt: str, fallback_mock: dic
         return json.loads(content)
     except Exception as e:
         print(f"[LLM Client] Error calling Azure OpenAI: {e}")
-        return fallback_mock
+        # Return an error JSON so the UI doesn't crash but shows the error
+        return {"error": str(e)}
+

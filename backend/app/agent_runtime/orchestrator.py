@@ -63,20 +63,7 @@ class ChiefOrchestratorAgent(BaseAgent):
     # 2. Discover Opportunities dynamically
     await log_activity("Ajax is searching for relevant opportunities...")
 
-    fallback_mock = {
-      "opportunities": [
-        {
-          "title": "General Certification Program",
-          "description": "A great certification for your goal.",
-          "type": "certification",
-          "url": "https://example.com/certification",
-          "relevanceScore": 88
-        }
-      ],
-      "approval_request": "Register for the certification",
-      "approval_reason": "Crucial first step for your roadmap.",
-      "discovery_log": "Ajax found a relevant certification program."
-    }
+
 
     system_prompt = """
     You are an autonomous AI. Given a user goal, discover 1 to 2 highly relevant real-world opportunities (e.g. specific jobs, programs, open source projects, certifications).
@@ -93,9 +80,20 @@ class ChiefOrchestratorAgent(BaseAgent):
     }
     """
 
-    response = await generate_json(system_prompt, f"Goal: {title}", fallback_mock)
+    response = await generate_json(system_prompt, f"Goal: {title}")
     
-    for idx, opp in enumerate(response.get("opportunities", fallback_mock["opportunities"])):
+    if "error" in response:
+        opportunities_data = []
+        discovery_log = f"Ajax encountered an API Error: {response['error']}"
+        approval_target = "Fix Azure API Keys"
+        approval_reason = "The LLM API call failed."
+    else:
+        opportunities_data = response.get("opportunities", [])
+        discovery_log = response.get("discovery_log", "Ajax found some relevant data.")
+        approval_target = response.get("approval_request", "Review findings")
+        approval_reason = response.get("approval_reason", "Review the generated opportunities.")
+
+    for idx, opp in enumerate(opportunities_data):
       db.opportunities.create({
         "id": f"opp_{int(datetime.datetime.utcnow().timestamp()*1000)}_{idx}",
         "title": opp.get("title"),
@@ -108,11 +106,10 @@ class ChiefOrchestratorAgent(BaseAgent):
         "createdAt": datetime.datetime.utcnow().isoformat() + "Z"
       })
 
-    await log_activity(response.get("discovery_log", fallback_mock["discovery_log"]))
+    await log_activity(discovery_log)
 
     # 3. Create an Approval request
-    approval_target = response.get("approval_request", fallback_mock["approval_request"])
-    approval_reason = response.get("approval_reason", fallback_mock["approval_reason"])
+
 
     await log_activity(f"Ajax requires your approval to proceed with: {approval_target}")
     
