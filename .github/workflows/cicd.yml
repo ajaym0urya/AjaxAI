@@ -14,7 +14,6 @@ env:
   AZURE_LOCATION: uaenorth
   AZURE_RESOURCE_GROUP: ajaxai-rg7
   AZURE_LOG_ANALYTICS_WORKSPACE: law-ajaxai-prod
->>>>>>> b21496f97982d5b07f8b6ab8f2ee053d6cea7e46
   AZURE_CONTAINERAPPS_ENV: cae-ajaxai-prod
   AZURE_FRONTEND_APP: ajaxai-frontend
   AZURE_BACKEND_APP: ajaxai-backend
